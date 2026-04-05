@@ -1,0 +1,340 @@
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Глобальный контейнер для центрирования контента */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px; /* Отступы слева и справа от краев экрана */
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* --- HEADER --- */
+.header {
+  width: 100%;
+  /* background-color: #C5C9B2; - Убираем отсюда */
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #C5C9B2; /* Фон только у контента */
+  border-radius: 0 0 20px 20px; /* Опционально: скруглённые края */
+}
+
+
+.nav {
+  background-color: #D8D9C8;
+  padding: 10px 40px;
+  border-radius: 20px;
+  display: flex;
+  gap: 100px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.header-phone {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* --- HERO (Супер Компания) --- */
+.hero {
+  padding: 50px 0;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-text {
+  background-color: #77885B;
+  color: #fff;
+  padding: 50px 40px;
+  border-radius: 10px;
+  max-width: 550px;
+  z-index: 1;
+  /* двигаем блок влево, чтобы фото налезло на него справа */
+  margin-right: -50px; 
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero-text h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  background-color: #EED1A6;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.hero-image {
+  z-index: 2; /* Фото выше текста */
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 600px;
+  border-radius: 10px;
+}
+
+/* --- STATS (Цифры) --- */
+.stats {
+  padding: 40px 0;
+}
+
+/* Горизонтальная линия только внутри контейнера */
+.stats-line {
+  border-top: 1px solid #000000;
+  margin-bottom: 40px;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+.stats-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- ABOUT (О нас) --- */
+.about {
+  padding: 10px 200px;
+  position: relative;
+}
+
+.about-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.about-left {
+  flex: 0 0 400px;
+}
+
+.about-left img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-text {
+  background-color: #8A9870; /* Ваш цвет */
+  color: #fff;
+  padding: 40px;
+  border-radius: 0 10px 10px 0;
+  flex: 1;
+}
+
+.about-text h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Фото бревна, налегающее на блок */
+.about-log {
+  position: absolute;
+  top: 0;
+  right: 175px;
+  z-index: 2;
+  width: 150px;
+}
+
+.about-log img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* --- GALLERY --- */
+.gallery {
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Горизонтальная линия */
+.gallery-line {
+  border-top: 1px solid #000000;
+  margin-bottom: 40px;
+}
+
+.gallery-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.gallery-item {
+  width: 250px;
+  height: 200px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-item.active {
+  width: 350px;
+  height: 250px;
+}
+
+/* Стрелки */
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: #77885B;
+  z-index: 10;
+}
+.gallery-arrow.left { left: 5%; }
+.gallery-arrow.right { right: 5%; }
+
+.gallery-btn {
+  background-color: #EED1A6;
+  border: none; /* Убрали черную обводку */
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* --- ADVANTAGES --- */
+.advantages {
+  padding: 20px 0;
+}
+
+.advantages-grid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.advantage-item img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.advantage-item p {
+  font-size: 14px;
+}
+
+/* --- FOOTER --- */
+footer {
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  padding: 20px 50px;
+  background-color: #C5C9B2; /* Фон только у контента */
+  border-radius: 20px 20px 0 0; /* Опционально: скруглённые края */
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 100px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Адаптив (упрощенный) */
+@media (max-width: 900px) {
+  .hero-inner, .about-inner { flex-direction: column; }
+  .hero-text { margin-right: 0; border-radius: 10px; }
+  .about-left img { border-radius: 10px 10px 0 0; }
+  .about-text { border-radius: 0 0 10px 10px; }
+  .about-log { right: 10px; }
+}
