@@ -1,25 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Hero from './components/blocks/Hero';
-import Stats from './components/blocks/Stats';
-import About from './components/blocks/About';
-import Gallery from './components/blocks/Gallery';
-import Advantages from './components/blocks/Advantages';
+import HomePage from './components/HomePage';
+import GalleryPage from './components/GalleryPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <ScrollToTop />
       <Header />
-      <main>
-        <Hero />
-        <Stats />
-        <About />
-        <Gallery />
-        <Advantages />
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 

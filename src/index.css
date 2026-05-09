@@ -25,14 +25,8 @@ body {
   font-weight: bold;
 }
 
-/* --- HEADER --- */
-.header {
-  width: 100%;
-  /* background-color: #C5C9B2; - Убираем отсюда */
-}
-
 .header-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 15px 50px;
   display: flex;
@@ -302,12 +296,9 @@ body {
 }
 
 /* --- FOOTER --- */
-footer {
-  width: 100%;
-}
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1125px;
   padding: 20px 50px;
   background-color: #C5C9B2; /* Фон только у контента */
   border-radius: 20px 20px 0 0; /* Опционально: скруглённые края */
@@ -337,4 +328,104 @@ footer {
   .about-left img { border-radius: 10px 10px 0 0; }
   .about-text { border-radius: 0 0 10px 10px; }
   .about-log { right: 10px; }
+}
+
+
+
+
+
+/* ----- прижимаем footer к низу ----- */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* ----- отступ на странице галереи между header и заголовком ----- */
+.gallery-page {
+  padding-top: 30px;
+}
+
+.gallery-title {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+/* ----- блок с фото: фон #ECEADE, выровнен по контейнеру (уже внутри .container) ----- */
+.gallery-photo-block {
+  background-color: #ECEADE;
+  padding: 40px 20px;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+
+/* ----- сетка 4 колонки ----- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.gallery-card {
+  width: 100%;
+}
+
+.gallery-placeholder {
+  background-color: #6f9e6f;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.gallery-placeholder:hover {
+  transform: scale(1.02);
+}
+
+/* ----- блок вопросов: выравнивание по левому краю (как header/footer) ----- */
+.questions-section {
+  text-align: left;
+  margin: 10px 0 10px;
+  padding: 0;
+}
+
+.questions-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.questions-contacts p {
+  font-size: 17px;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
+}
+
+/* ----- адаптив ----- */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import houseImg from '../../assets/images/house.png';
 
 const Hero = () => {
@@ -12,7 +13,9 @@ const Hero = () => {
             Полный спектр строительных услуг<br />
             Реализуем проекты любого масштаба: от уютной бани на участке до семейного загородного дома
           </p>
-          <button className="hero-btn">Посмотреть галерею готовых проектов →</button>
+          <Link to="/gallery">
+            <button className="hero-btn">Посмотреть галерею готовых проектов →</button>
+          </Link>
         </div>
         
         <div className="hero-image">

@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-// Добавьте картинки галереи в папку assets/images
-// import gallery1 from '../../assets/images/gallery1.jpg';
+import { Link } from 'react-router-dom';
 
 const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(1);
 
-  // Заглушки для примера, замените на реальные импорты картинок
   const images = [
     { id: 0, color: '#ccc' },
     { id: 1, color: '#bbb' },
@@ -18,7 +16,7 @@ const Gallery = () => {
   return (
     <section className="gallery">
       <div className="container">
-        <div className="gallery-line"></div> {/* Линия с отступами */}
+        <div className="gallery-line"></div>
         <h3 className="section-title">ГАЛЕРЕЯ ПРОЕКТОВ</h3>
         
         <div className="gallery-preview">
@@ -31,14 +29,15 @@ const Gallery = () => {
               style={{ backgroundColor: index === activeIndex ? '#B5C0A0' : '#E8E9E0' }}
               onClick={() => setActiveIndex(index)}
             >
-              {/* <img src={img.src} alt="Проект" /> */}
             </div>
           ))}
 
           <button className="gallery-arrow right" onClick={nextSlide}>›</button>
         </div>
 
-        <button className="gallery-btn">Смотреть больше →</button>
+        <Link to="/gallery">
+          <button className="gallery-btn">Смотреть больше →</button>
+        </Link>
       </div>
     </section>
   );

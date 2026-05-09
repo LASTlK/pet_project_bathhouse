@@ -24,15 +24,17 @@ const Advantages = () => {
             </div>
           ))}
         </div>
-        <div>
-          <h4>ОСТАЛИСЬ ВОПРОСЫ?</h4>
-          <p>
-            Тел: +7 (900) 000-00-11
-            <br />
-            Почта: super_company@mail.ru
-            <br />
-            Телеграм: @superrrrCompany
-          </p>
+        <div className="questions-section">
+          <h4 className="questions-heading">ОСТАЛИСЬ ВОПРОСЫ?</h4>
+          <div className="questions-contacts">
+            <p>
+              Тел: +7 (900) 000-00-11
+              <br />
+              Почта: super_company@mail.ru
+              <br />
+              Телеграм: @superrrrCompany
+            </p>
+          </div>
         </div>
       </div>
     </section>
